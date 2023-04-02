@@ -10,16 +10,15 @@ export default function Index() {
   return (
     <Layout title="Home / Stocky">
       <IndexNavbar fixed />
-      <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
+      <section className="header relative pt-16 items-center flex h-screen max-h-860-px mb-30">
         <div className="container mx-auto items-center flex flex-wrap">
-          <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
+          <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-8">
             <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-blueGray-600">
-                Stocky - Stock Price Prediction System
+              FraudShield - Credit Card Fraud Detection System
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                A software application that helps individuals to manage and plan
-                tHeir strategies for making wise investments.
+              A software application that uses historical transaction data and real-time monitoring to identify and prevent fraudulent activity on credit cards.
               </p>
               <div className="mt-12">
                 <Link href="/">
@@ -42,7 +41,7 @@ export default function Index() {
         </div>
         <img
           className="absolute top-20 b-auto right-0 pt-12 sm:w-6/12 -mt-26 sm:mt-0 w-100 max-h-860-px"
-          src="https://av.sc.com/corp-en/content/images/SC-A2-Illustration-2.png"
+          src="https://img.freepik.com/free-vector/couple-securing-their-online-banking_53876-8767.jpg"
           alt="..."
         />
       </section>
@@ -70,13 +69,13 @@ export default function Index() {
             ></polygon>
           </svg> */}
         </div>
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-20">
           <div className="flex flex-wrap items-center">
-            <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
+            <div className="w-10/12 md:w-6/12 lg:w-5/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
               <div className="relative flex flex-col min-w-0 break-words bg-black w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
                 <img
                   alt="..."
-                  src="https://img.freepik.com/free-vector/delivery-logistics-shipment-isometric-flowchart-with-isolated-images-people-transport-vehicles-carrying-parcel-boxes-illustration_1284-29115.jpg?w=360"
+                  src="https://ecm.capitalone.com/WCM/bank/landing-pages/features/security-fraud-protection/security-fraud-protection-e4-checkered/06090-360checkingfeaturehub-21.4-security-mech-e4.b-desktop-1/rmobile.jpg"
                   className="w-full align-middle rounded-t-lg"
                 />
                 <blockquote className="relative p-8 mb-4">
@@ -92,17 +91,18 @@ export default function Index() {
                     ></polygon>
                   </svg> */}
                   <h4 className="text-xl font-bold text-white">
-                    Stocky - Stock Price Prediction System
+                  FraudShield - Credit Card Fraud Detection System
                   </h4>
                   <p className="text-md font-light mt-2 text-white">
-                    The stock price prediction app uses advanced algorithms and
-                    machine learning techniques to analyze historical market
-                    data and predict future trends in stock prices. Users can
-                    input specific stocks they are interested in and receive
-                    predictions on whether the stock price will increase or
-                    decrease, as well as projected price targets. The app may
-                    also provide news and analysis related to the stock market
-                    to assist users in making informed investment decisions.
+                    The credit card fraud detection system app uses advanced algorithms 
+                    and machine learning techniques to analyze credit card transactions 
+                    and identify any suspicious activity that may indicate fraud.</p>
+                    <p className="text-md font-light mt-2 text-white">
+                    Overall, credit card fraud detection systems use a combination 
+                    of these techniques to monitor transaction data in real-time and 
+                    identify any suspicious activity. By doing so, they can help prevent 
+                    fraudulent transactions from occurring and protect customers from 
+                    financial losses.
                   </p>
                   {/* <p className="text-md font-light mt-2 text-white">
                     Overall, a digital SCM system helps businesses improve their
@@ -116,7 +116,7 @@ export default function Index() {
             <div id="sol" className="w-full md:w-6/12 px-4">
               <div className="flex flex-wrap">
                 <div className="w-full md:w-6/12 px-4">
-                  <div className="relative flex flex-col mt-4">
+                  <div className="relative flex flex-col mt-2">
                     <div className="px-4 py-5 flex-auto">
                       <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-white">
                         <svg
@@ -135,13 +135,12 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Historical Data
+                      Real-time monitoring
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        Historical data on stock prices, trading volumes, and
-                        other market variables are essential to analyze market
-                        trends and patterns. The more data that is available,
-                        the more accurate predictions can be made.
+                      Credit card fraud detection systems must be able 
+                      to monitor transactions in real-time to detect any
+                       suspicious activity.
                       </p>
                     </div>
                   </div>
@@ -164,13 +163,15 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Fundamental Analysis
+                      Risk Assessment
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        Fundamental analysis involves analyzing a company's
-                        financial statements, industry trends, and macroeconomic
-                        factors to evaluate its potential for growth and
-                        profitability.
+                      The system assigns a risk score to each transaction
+                       based on its likelihood of being fraudulent. 
+                       Transactions with high risk scores are flagged for
+                        further review.
+
+
                       </p>
                     </div>
                   </div>
@@ -195,12 +196,12 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Sentiment Analysis
+                      Data analytics
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        Sentiment analysis involves analyzing news articles,
-                        social media, and other sources to gauge public opinion
-                        about a company or the market as a whole.
+                      Fraud detection systems often use data analytics
+                       to identify trends and patterns that may indicate 
+                       fraud. 
                       </p>
                     </div>
                   </div>
@@ -223,14 +224,12 @@ export default function Index() {
                         </svg>
                       </div>
                       <h6 className="text-xl mb-1 font-semibold">
-                        Market News
+                      Integration with  systems
                       </h6>
                       <p className="mb-4 text-blueGray-500">
-                        News events such as mergers and acquisitions, economic
-                        indicators, and political developments can have a
-                        significant impact on stock prices. Incorporating this
-                        information into stock prediction models can improve
-                        accuracy.
+                      The fraud detection system needs to be integrated
+                       with other systems such as banking systems, payment 
+                       processors, and customer service systems.
                       </p>
                     </div>
                   </div>
@@ -511,7 +510,7 @@ export default function Index() {
             <div className="w-full text-center lg:w-8/12">
               <h3 className="font-semibold text-3xl">Let&apos;s get started</h3>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">
-              Stocky - Stock Price Prediction System
+              FraudShield - Credit Card Fraud Detection System
               </p>
               <div className="sm:block flex flex-col mt-10">
                 <Link href="/disease">

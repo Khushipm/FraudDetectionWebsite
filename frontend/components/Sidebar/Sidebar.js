@@ -51,7 +51,7 @@ export default function Sidebar() {
                 className="text-blueGray-700 text-xl font-bold leading-relaxed inline-block mr-4 py-4 whitespace-nowrap uppercase "
                 href="/"
               >
-                Stocky
+                FraudShield
               </a>
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default function Sidebar() {
                       href="/"
                       className="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
                     >
-                      Stocky
+                      FraudShield
                     </a>
                   </Link>
                 </div>

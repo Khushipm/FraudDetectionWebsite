@@ -27,8 +27,8 @@ export default function CardLineChart() {
           {
             label: new Date().getFullYear() - 1,
             fill: false,
-            backgroundColor: "#fff",
-            borderColor: "#fff",
+            backgroundColor: "ff0000",
+            borderColor: "#ff0000",
             data: [40, 68, 86, 74, 56, 60, 87],
           },
         ],
@@ -109,8 +109,8 @@ export default function CardLineChart() {
   }, []);
   return (
     <>
-      <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700">
-        <div className="rounded-t mb-0 px-4 py-3 bg-transparent">
+      <div className="relative flex flex-col  w-12/12 mt-5 min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700">
+        <div className="rounded-t mb-0 py-3 bg-transparent ">
           <div className="flex flex-wrap items-center">
             <div className="relative w-full max-w-full flex-grow flex-1">
               <h6 className="uppercase text-blueGray-100 mb-1 text-xs font-semibold">
@@ -120,7 +120,7 @@ export default function CardLineChart() {
             </div>
           </div>
         </div>
-        <div className="p-4 flex-auto">
+        <div className="p-4  flex-auto">
           {/* Chart */}
           <div className="relative h-350-px">
             <canvas id="line-chart"></canvas>
