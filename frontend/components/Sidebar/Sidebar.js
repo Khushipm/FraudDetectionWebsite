@@ -116,7 +116,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
-                <Link href="/transportation">
+                <Link href="/dashboard">
                   <a
                     className={
                       "text-sm uppercase py-3 font-bold block " +
@@ -128,12 +128,12 @@ export default function Sidebar() {
                     <i
                       className={
                         "fas fa-tv mr-2 text-sm " +
-                        (router.pathname.indexOf("/disease") !== -1
+                        (router.pathname.indexOf("/dashboard") !== -1
                           ? "opacity-75"
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Fundamental Analysis
+                    Fraud Analysis
                   </a>
                 </Link>
               </li>
@@ -156,17 +156,17 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Market News
+                    Transaction Log
                   </a>
                 </Link>
               </li>
 
               <li className="items-center">
-                <Link href="/scm">
+                <Link href="/order">
                   <a
                     className={
                       "text-sm uppercase py-3 font-bold block " +
-                      (router.pathname.indexOf("/scm") !== -1
+                      (router.pathname.indexOf("/order") !== -1
                         ? "text-lightBlue-500 hover:text-lightBlue-600"
                         : "text-blueGray-700 hover:text-blueGray-500")
                     }
@@ -179,7 +179,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Sentiment Analysis
+                    Fraud Detection
                   </a>
                 </Link>
               </li>
@@ -203,12 +203,42 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Historical Data
+                    {/* Historical Data */}
                   </a>
                 </Link>
               </li>
               {/* Divider */}
               <hr className="my-4 md:min-w-full" />
+
+              <h6 className="md:min-w-full text-blueGray-500 text-xs uppercase font-bold block pt-1 pb-4 no-underline">
+             Features
+            </h6>
+            {/* Navigation */}
+
+            <ul className="md:flex-col md:min-w-full flex flex-col list-none">
+              <li className="items-center">
+                <Link href="/transportation">
+                  <a
+                    className={
+                      "text-sm uppercase py-3 font-bold block " +
+                      (router.pathname.indexOf("/transportation") !== -1
+                        ? "text-lightBlue-500 hover:text-lightBlue-600"
+                        : "text-blueGray-700 hover:text-blueGray-500")
+                    }
+                  >
+                    <i
+                      className={
+                        "fas fa-tv mr-2 text-sm " +
+                        (router.pathname.indexOf("/disease") !== -1
+                          ? "opacity-75"
+                          : "text-blueGray-300")
+                      }
+                    ></i>{" "}
+                    Risk Assessment
+                  </a>
+                </Link>
+              </li>
+              </ul>
               {/* <li className="flex items-center">
                 <div
                   className="px-3 py-4 text-xs uppercase font-bold"
