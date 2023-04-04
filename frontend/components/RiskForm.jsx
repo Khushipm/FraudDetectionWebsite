@@ -29,7 +29,7 @@ export default function RiskForm() {
   const [PAY_6, setPAY_6] = useState("");
   const [BILL_AMT1, setBILL_AMT1] = useState("");
   const [BILL_AMT2, setBILL_AMT2] = useState("");
-  const [BILL_AMT3, setsetBILL_AMT3EDUCATION] = useState("");
+  const [BILL_AMT3, setBILL_AMT3] = useState("");
   const [BILL_AMT4, setBILL_AMT4] = useState("");
   const [BILL_AMT5, setBILL_AMT5] = useState("");
   const [BILL_AMT6, setBILL_AMT6] = useState("");
@@ -40,7 +40,6 @@ export default function RiskForm() {
   const [PAY_AMT5, setPAY_AMT5] = useState("");
   const [PAY_AMT6, setPAY_AMT6] = useState("");
   const [AVG_BILL_AMT, setAVG_BILL_AMT] = useState("");
- 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,30 +47,30 @@ export default function RiskForm() {
       .post("http://127.0.0.1:5000/riskAssesment", {
         // location: formData.Location,
         // Moist: Number(formData.Moist),
-        LIMIT_BAL: 240000.0,
-        SEX: 1,
-        EDUCATION: 1,
-        MARRIAGE: 1,
-        AGE: 34.869911,
-        PAY_0: -1,
-        PAY_2: -1,
-        PAY_3: -1,
-        PAY_4: -1,
-        PAY_5: -1,
-        PAY_6: -1,
-        BILL_AMT1: 2182.103574,
-        BILL_AMT2: 1505.259648,
-        BILL_AMT3: 1961.764094,
-        BILL_AMT4: 1480.912744,
-        BILL_AMT5: 1657.427797,
-        BILL_AMT6: 1981.241617,
-        PAY_AMT1: 1505.259648,
-        PAY_AMT2: 1961.764094,
-        PAY_AMT3: 1480.912744,
-        PAY_AMT4: 1657.427797,
-        PAY_AMT5: 1981.241617,
-        PAY_AMT6: 624.947622,
-        AVG_BILL_AMT: 9117.674793,
+        LIMIT_BAL: Number(LIMIT_BAL),
+        SEX: Number(SEX),
+        EDUCATION: Number(EDUCATION),
+        MARRIAGE: Number(MARRIAGE),
+        AGE: Number(AGE),
+        PAY_0: Number(PAY_0),
+        PAY_2: Number(PAY_2),
+        PAY_3: Number(PAY_3),
+        PAY_4: Number(PAY_4),
+        PAY_5: Number(PAY_5),
+        PAY_6: Number(PAY_6),
+        BILL_AMT1: Number(BILL_AMT1),
+        BILL_AMT2: Number(BILL_AMT2),
+        BILL_AMT3: Number(BILL_AMT3),
+        BILL_AMT4: Number(BILL_AMT4),
+        BILL_AMT5: Number(BILL_AMT5),
+        BILL_AMT6: Number(BILL_AMT6),
+        PAY_AMT1: Number(PAY_AMT1),
+        PAY_AMT2: Number(PAY_AMT2),
+        PAY_AMT3: Number(PAY_AMT3),
+        PAY_AMT4: Number(PAY_AMT4),
+        PAY_AMT5: Number(PAY_AMT5),
+        PAY_AMT6: Number(PAY_AMT6),
+        AVG_BILL_AMT: Number(AVG_BILL_AMT),
       })
       .then(function (response) {
         data = response.data;
@@ -180,7 +179,7 @@ export default function RiskForm() {
                   id="LIMIT_BAL"
                   name="LIMIT_BAL"
                   value={LIMIT_BAL}
-                   onChange={(e) => setLIMIT_BAL(e.target.value)}
+                  onChange={(e) => setLIMIT_BAL(e.target.value)}
                 />
               </label>
             </div>
@@ -196,7 +195,7 @@ export default function RiskForm() {
                   id="SEX"
                   name="SEX"
                   value={SEX}
-                   onChange={(e) => setSEX(e.target.value)}
+                  onChange={(e) => setSEX(e.target.value)}
                 />
               </label>
             </div>
@@ -212,7 +211,7 @@ export default function RiskForm() {
                   id="EDUCATION"
                   name="EDUCATION"
                   value={EDUCATION}
-                   onChange={(e) => setEDUCATION(e.target.value)}
+                  onChange={(e) => setEDUCATION(e.target.value)}
                 />
               </label>
             </div>
@@ -228,7 +227,7 @@ export default function RiskForm() {
                   id="MARRIAGE"
                   name="MARRIAGE"
                   value={MARRIAGE}
-                   onChange={(e) => setMARRIAGE(e.target.value)}
+                  onChange={(e) => setMARRIAGE(e.target.value)}
                 />
               </label>
             </div>
@@ -244,7 +243,7 @@ export default function RiskForm() {
                   id="AGE"
                   name="AGE"
                   value={AGE}
-                   onChange={(e) => setAGE(e.target.value)}
+                  onChange={(e) => setAGE(e.target.value)}
                 />
               </label>
             </div>
@@ -261,7 +260,7 @@ export default function RiskForm() {
                   id="PAY_0"
                   name="PAY_0"
                   value={PAY_0}
-                   onChange={(e) => setPAY_0(e.target.value)}
+                  onChange={(e) => setPAY_0(e.target.value)}
                 />
               </label>
             </div>
@@ -278,7 +277,7 @@ export default function RiskForm() {
                   id="PAY_2"
                   name="PAY_2"
                   value={PAY_2}
-                   onChange={(e) => setPAY_2(e.target.value)}
+                  onChange={(e) => setPAY_2(e.target.value)}
                 />
               </label>
             </div>
@@ -295,7 +294,7 @@ export default function RiskForm() {
                   id="PAY_3"
                   name="PAY_3"
                   value={PAY_3}
-                   onChange={(e) => setPAY_3(e.target.value)}
+                  onChange={(e) => setPAY_3(e.target.value)}
                 />
               </label>
             </div>
@@ -312,7 +311,7 @@ export default function RiskForm() {
                   id="PAY_4"
                   name="PAY_4"
                   value={PAY_4}
-                   onChange={(e) => setPAY_4(e.target.value)}
+                  onChange={(e) => setPAY_4(e.target.value)}
                 />
               </label>
             </div>
@@ -329,7 +328,7 @@ export default function RiskForm() {
                   id="PAY_5"
                   name="PAY_5"
                   value={PAY_5}
-                   onChange={(e) => setPAY_5(e.target.value)}
+                  onChange={(e) => setPAY_5(e.target.value)}
                 />
               </label>
             </div>
@@ -346,7 +345,7 @@ export default function RiskForm() {
                   id="PAY_6"
                   name="PAY_6"
                   value={PAY_6}
-                   onChange={(e) => setPAY_6(e.target.value)}
+                  onChange={(e) => setPAY_6(e.target.value)}
                 />
               </label>
             </div>
@@ -363,7 +362,7 @@ export default function RiskForm() {
                   id="BILL_AMT1"
                   name="BILL_AMT1"
                   value={BILL_AMT1}
-                   onChange={(e) => setBILL_AMT1(e.target.value)}
+                  onChange={(e) => setBILL_AMT1(e.target.value)}
                 />
               </label>
             </div>
@@ -380,7 +379,7 @@ export default function RiskForm() {
                   id="BILL_AMT2"
                   name="BILL_AMT2"
                   value={BILL_AMT2}
-                   onChange={(e) => setBILL_AMT2(e.target.value)}
+                  onChange={(e) => setBILL_AMT2(e.target.value)}
                 />
               </label>
             </div>
@@ -396,7 +395,7 @@ export default function RiskForm() {
                   id="BILL_AMT3"
                   name="BILL_AMT3"
                   value={BILL_AMT3}
-                   onChange={(e) => setBILL_AMT3(e.target.value)}
+                  onChange={(e) => setBILL_AMT3(e.target.value)}
                 />
               </label>
             </div>
@@ -412,7 +411,7 @@ export default function RiskForm() {
                   id="BILL_AMT4"
                   name="BILL_AMT4"
                   value={BILL_AMT4}
-                   onChange={(e) => setBILL_AMT4(e.target.value)}
+                  onChange={(e) => setBILL_AMT4(e.target.value)}
                 />
               </label>
             </div>
@@ -429,7 +428,7 @@ export default function RiskForm() {
                   id="BILL_AMT5"
                   name="BILL_AMT5"
                   value={BILL_AMT5}
-                   onChange={(e) => setBILL_AMT5(e.target.value)}
+                  onChange={(e) => setBILL_AMT5(e.target.value)}
                 />
               </label>
             </div>
@@ -446,7 +445,7 @@ export default function RiskForm() {
                   id="BILL_AMT6"
                   name="BILL_AMT6"
                   value={BILL_AMT6}
-                   onChange={(e) => setBILL_AMT6(e.target.value)}
+                  onChange={(e) => setBILL_AMT6(e.target.value)}
                 />
               </label>
             </div>
@@ -463,7 +462,7 @@ export default function RiskForm() {
                   id="PAY_AMT1"
                   name="PAY_AMT1"
                   value={PAY_AMT1}
-                   onChange={(e) => setPAY_AMT1(e.target.value)}
+                  onChange={(e) => setPAY_AMT1(e.target.value)}
                 />
               </label>
             </div>
@@ -480,7 +479,7 @@ export default function RiskForm() {
                   id="PAY_AMT2"
                   name="PAY_AMT2"
                   value={PAY_AMT2}
-                   onChange={(e) => setPAY_AMT2(e.target.value)}
+                  onChange={(e) => setPAY_AMT2(e.target.value)}
                 />
               </label>
             </div>
@@ -497,7 +496,7 @@ export default function RiskForm() {
                   id="PAY_AMT3"
                   name="PAY_AMT3"
                   value={PAY_AMT3}
-                   onChange={(e) => setPAY_AMT3(e.target.value)}
+                  onChange={(e) => setPAY_AMT3(e.target.value)}
                 />
               </label>
             </div>
@@ -514,7 +513,7 @@ export default function RiskForm() {
                   id="PAY_AMT4"
                   name="PAY_AMT4"
                   value={PAY_AMT4}
-                   onChange={(e) => setPAY_AMT4(e.target.value)}
+                  onChange={(e) => setPAY_AMT4(e.target.value)}
                 />
               </label>
             </div>
@@ -531,7 +530,7 @@ export default function RiskForm() {
                   id="PAY_AMT5"
                   name="PAY_AMT5"
                   value={PAY_AMT5}
-                   onChange={(e) => setPAY_AMT5(e.target.value)}
+                  onChange={(e) => setPAY_AMT5(e.target.value)}
                 />
               </label>
             </div>
@@ -548,7 +547,7 @@ export default function RiskForm() {
                   id="PAY_AMT6"
                   name="PAY_AMT6"
                   value={PAY_AMT6}
-                   onChange={(e) => setPAY_AMT6(e.target.value)}
+                  onChange={(e) => setPAY_AMT6(e.target.value)}
                 />
               </label>
             </div>
@@ -565,7 +564,7 @@ export default function RiskForm() {
                   id="AVG_BILL_AMT"
                   name="AVG_BILL_AMT"
                   value={AVG_BILL_AMT}
-                   onChange={(e) => setAVG_BILL_AMT(e.target.value)}
+                  onChange={(e) => setAVG_BILL_AMT(e.target.value)}
                 />
               </label>
             </div>

@@ -1,10 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+// import { ToastContainer, toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
 export default function TransportForm() {
   // const [isLoading, setIsLoading] = useState(false);
   // const [isDisabled, setIsDisabled] = useState(false);
   const [output, setOutput] = useState(null);
+
+  const [prediction, setPrediction] = useState(null);
   // const handleChange = (event) => {
   //   setFormData((prevState) => {
   //     return {
@@ -64,27 +68,27 @@ export default function TransportForm() {
       .post("http://127.0.0.1:5000/logfraud", {
         // location: formData.Location,
         // Moist: Number(formData.Moist),
-        amt: amt,
-        gender: gender,
-        city_pop: cityPop,
-        age: age,
-        trans_month: transMonth,
-        trans_year: transYear,
-        latitudinal_distance: lat,
-        longitudinal_distance: long,
-        category_food_dining: category_food_dining,
-        category_gas_transport: category_gas_transport,
-        category_grocery_net: category_grocery_net,
-        category_grocery_pos: category_grocery_pos,
-        category_health_fitness: category_health_fitness,
-        category_home: category_home,
-        category_kids_pets: category_kids_pets,
-        category_misc_net: category_misc_net,
-        category_misc_pos: category_misc_pos,
-        category_personal_care: category_personal_care,
-        category_shopping_net: category_shopping_net,
-        category_shopping_pos: category_shopping_pos,
-        category_travel: category_travel,
+        amt: Number(amt),
+        gender: Number(gender),
+        city_pop: Number(cityPop),
+        age: Number(age),
+        trans_month: Number(transMonth),
+        trans_year: Number(transYear),
+        latitudinal_distance: Number(lat),
+        longitudinal_distance: Number(long),
+        category_food_dining: Number(category_food_dining),
+        category_gas_transport: Number(category_gas_transport),
+        category_grocery_net: Number(category_grocery_net),
+        category_grocery_pos: Number(category_grocery_pos),
+        category_health_fitness: Number(category_health_fitness),
+        category_home: Number(category_home),
+        category_kids_pets: Number(category_kids_pets),
+        category_misc_net: Number(category_misc_net),
+        category_misc_pos: Number(category_misc_pos),
+        category_personal_care: Number(category_personal_care),
+        category_shopping_net: Number(category_shopping_net),
+        category_shopping_pos: Number(category_shopping_pos),
+        category_travel: Number(category_travel),
       })
       .then(function (response) {
         data = response.data;
@@ -236,7 +240,7 @@ export default function TransportForm() {
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="age"
-                  value={cityPop}
+                  value={age}
                   onChange={(e) => setAge(e.target.value)}
                 />
               </label>
@@ -357,7 +361,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_grocery_pos"
                   value={category_grocery_pos}
-                  onChange={(e) => SetCategory_grocery_pos(e.target.value)}
+                  onChange={(e) => setCategory_grocery_pos(e.target.value)}
                 />
               </label>
             </div>
@@ -372,7 +376,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_health_fitness"
                   value={category_health_fitness}
-                  onChange={(e) => SetCategory_health_fitness(e.target.value)}
+                  onChange={(e) => setCategory_health_fitness(e.target.value)}
                 />
               </label>
             </div>
@@ -387,7 +391,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_home"
                   value={category_home}
-                  onChange={(e) => SetCategory_home(e.target.value)}
+                  onChange={(e) => setCategory_home(e.target.value)}
                 />
               </label>
             </div>
@@ -402,7 +406,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_kids_pets"
                   value={category_kids_pets}
-                  onChange={(e) => SetCategory_kids_pets(e.target.value)}
+                  onChange={(e) => setCategory_kids_pets(e.target.value)}
                 />
               </label>
             </div>
@@ -417,7 +421,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_misc_net"
                   value={category_misc_net}
-                  onChange={(e) => SetCategory_misc_net(e.target.value)}
+                  onChange={(e) => setCategory_misc_net(e.target.value)}
                 />
               </label>
             </div>
@@ -432,7 +436,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_misc_pos"
                   value={category_misc_pos}
-                  onChange={(e) => SetCategory_misc_pos(e.target.value)}
+                  onChange={(e) => setCategory_misc_pos(e.target.value)}
                 />
               </label>
             </div>
@@ -447,7 +451,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_personal_care"
                   value={category_personal_care}
-                  onChange={(e) => SetCategory_personal_care(e.target.value)}
+                  onChange={(e) => setCategory_personal_care(e.target.value)}
                 />
               </label>
             </div>
@@ -462,7 +466,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_shopping_net"
                   value={category_shopping_net}
-                  onChange={(e) => SetCategory_shopping_net(e.target.value)}
+                  onChange={(e) => setCategory_shopping_net(e.target.value)}
                 />
               </label>
             </div>
@@ -477,7 +481,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_shopping_pos"
                   value={category_shopping_pos}
-                  onChange={(e) => SetCategory_shopping_pos(e.target.value)}
+                  onChange={(e) => setCategory_shopping_pos(e.target.value)}
                 />
               </label>
             </div>
@@ -493,7 +497,7 @@ export default function TransportForm() {
                   type="number"
                   id="category_travel"
                   value={category_travel}
-                  onChange={(e) => SetCategory_shopping_travel(e.target.value)}
+                  onChange={(e) => setCategory_travel(e.target.value)}
                 />
               </label>
             </div>
@@ -617,6 +621,8 @@ export default function TransportForm() {
               </button>
             </div>
           </form>
+          {output == 0 && <div className="alert">The prediction is 0.</div>}
+          {output == 1 && <div className="alert">The prediction is 1.</div>}
         </div>
       </div>
     </>
