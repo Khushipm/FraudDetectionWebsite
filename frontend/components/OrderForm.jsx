@@ -5,38 +5,61 @@ export default function TransportForm() {
   // const [isLoading, setIsLoading] = useState(false);
   // const [isDisabled, setIsDisabled] = useState(false);
   const [output, setOutput] = useState(null);
-  const handleChange = (event) => {
-    setFormData((prevState) => {
-      return {
-        ...prevState,
-        [event.target.name]: event.target.value,
-      };
-    });
-  };
-
-  const [transDateTransTime, setTransDateTransTime] = useState("");
-  const [ccNum, setCcNum] = useState("");
-  const [merchant, setMerchant] = useState("");
-  const [category, setCategory] = useState("");
+  // const handleChange = (event) => {
+  //   setFormData((prevState) => {
+  //     return {
+  //       ...prevState,
+  //       [event.target.name]: event.target.value,
+  //     };
+  //   }
+  //   );
+  // };
   const [amt, setAmt] = useState("");
-  const [first, setFirst] = useState("");
-  const [last, setLast] = useState("");
   const [gender, setGender] = useState("");
-  const [street, setStreet] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
+  const [cityPop, setCityPop] = useState("");
+  const [age, setAge] = useState("");
+  const [transMonth, setTransMonth] = useState("");
+  const [transYear, setTransYear] = useState("");
   const [lat, setLat] = useState("");
   const [long, setLong] = useState("");
-  const [cityPop, setCityPop] = useState("");
-  const [job, setJob] = useState("");
-  const [dob, setDob] = useState("");
-  const [transNum, setTransNum] = useState("");
-  const [unixTime, setUnixTime] = useState("");
-  const [merchLat, setMerchLat] = useState("");
-  const [merchLong, setMerchLong] = useState("");
-  const [isFraud, setIsFraud] = useState("");
-  const [transDate, setTransDate] = useState("");
+  const [category_food_dining, setCategory_food_dining] = useState("");
+  const [category_gas_transport, setCategory_gas_transport] = useState("");
+  const [category_grocery_net, setCategory_grocery_net] = useState("");
+  const [category_grocery_pos, setCategory_grocery_pos] = useState("");
+  const [ category_health_fitness, setCategory_health_fitness] = useState("");
+  const [ category_home, setCategory_home] = useState("");
+  const [ category_kids_pets, setCategory_kids_pets] = useState("");
+  const [category_misc_net, setCategory_misc_net] = useState("");
+  const [ category_misc_pos, setCategory_misc_pos] = useState("");
+  const [ category_personal_care, setCategory_personal_care] = useState("");
+  const [category_shopping_net, setCategory_shopping_net] = useState("");
+  const [category_shopping_pos, setCategory_shopping_pos] = useState("");
+  const [category_travel, setCategory_travel] = useState("");
+
+ 
+  // const [transDateTransTime, setTransDateTransTime] = useState("");
+  // const [ccNum, setCcNum] = useState("");
+  // const [merchant, setMerchant] = useState("");
+  // const [category, setCategory] = useState("");
+  
+  // const [first, setFirst] = useState("");
+  // const [last, setLast] = useState("");
+ 
+  // const [street, setStreet] = useState("");
+  // const [city, setCity] = useState("");
+  // const [state, setState] = useState("");
+  // const [zip, setZip] = useState("");
+
+  
+ 
+  // const [job, setJob] = useState("");
+  // const [dob, setDob] = useState("");
+  // const [transNum, setTransNum] = useState("");
+  // const [unixTime, setUnixTime] = useState("");
+  // const [merchLat, setMerchLat] = useState("");
+  // const [merchLong, setMerchLong] = useState("");
+  // const [isFraud, setIsFraud] = useState("");
+  // const [transDate, setTransDate] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -75,15 +98,15 @@ export default function TransportForm() {
       .catch(function (error) {
         console.log(error);
       });
-    setFormData({
-      Location: formData.Location,
-      Moist: 0,
-      Soil: 0,
-      Crop: 0,
-      N: 0,
-      K: 0,
-      P: 0,
-    });
+    // setFormData({
+    //   Location: formData.Location,
+    //   Moist: 0,
+    //   Soil: 0,
+    //   Crop: 0,
+    //   N: 0,
+    //   K: 0,
+    //   P: 0,
+    // });
     // Do something with the form data here
   };
 
@@ -164,80 +187,13 @@ export default function TransportForm() {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="date/time"
-              >
-                Transaction Date/Time:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  type="datetime-local"
-                  id="transDateTransTime"
-                  name="transDateTransTime"
-                  value={transDateTransTime}
-                  onChange={(e) => setTransDate(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="ccno"
-              >
-                Credit Card Number:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  type="text"
-                  id="ccNum"
-                  value={ccNum}
-                  onChange={(e) => setCcNum(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="merchant:"
-              >
-                Merchant:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  type="text"
-                  value={merchant}
-                  onChange={(e) => setMerchant(e.target.value)}
-                  id="merchant"
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="category:"
-              >
-                Category:
-                <input />
-              </label>
-              <select
-                className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                id="category"
-                name="category"
-                onChange={(e) => setCategory(e.target.value)}
-                value={category}
-                required
-              >
-                <option value="">--Please select an option--</option>
-                <option value="M">category1</option>
-                <option value="F">category2</option>
-              </select>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="category:"
+                htmlFor="amt"
               >
                 Amount:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="category"
                   type="number"
+                  id="amt"
                   value={amt}
                   onChange={(e) => setAmt(e.target.value)}
                 />
@@ -246,156 +202,28 @@ export default function TransportForm() {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="category:"
+                htmlFor="gender"
               >
-                First Name:
+                Amount:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="category"
-                  type="text"
-                  value={first}
-                  onChange={(e) => setFirst(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="category:"
-              >
-                Last Name:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="category"
-                  type="text"
-                  value={last}
-                  onChange={(e) => setLast(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="category:"
-              >
-                Gender:
-                <input />
-              </label>
-              <select
-                className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                id="gender"
-                name="gender"
-                onChange={(e) => setGender(e.target.value)}
-                value={gender}
-                required
-              >
-                <option value="">--Please select an option--</option>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
-              </select>
-            </div>
-
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="street:"
-              >
-                Street Address:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="category"
-                  type="street"
-                  value={street}
-                  onChange={(e) => setStreet(e.target.value)}
-                />
-              </label>
-            </div>
-
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="city:"
-              >
-                City:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="city"
-                  type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="state:"
-              >
-                State:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="state"
-                  type="text"
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="zip:"
-              >
-                Zip Code:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="zip"
                   type="number"
-                  value={zip}
-                  onChange={(e) => setZip(e.target.value)}
+                  id="gender"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
                 />
               </label>
             </div>
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="zip:"
-              >
-                Latitude:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="lat"
-                  type="number"
-                  value={lat}
-                  onChange={(e) => setLat(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="long:"
-              >
-                Longitude:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="long"
-                  type="number"
-                  value={long}
-                  onChange={(e) => setLong(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="cityPop"
+                htmlFor="city_pop"
               >
                 City Population:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="cityPop"
                   type="number"
+                  id="city_pop"
                   value={cityPop}
                   onChange={(e) => setCityPop(e.target.value)}
                 />
@@ -404,63 +232,277 @@ export default function TransportForm() {
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="job"
+                htmlFor="age"
               >
-                Job Title:
+                Age:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="job"
-                  type="text"
-                  value={job}
-                  onChange={(e) => setJob(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="dob"
-              >
-                Date of Birth:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="dob"
-                  type="date"
-                  value={dob}
-                  onChange={(e) => setDob(e.target.value)}
-                />
-              </label>
-            </div>
-            <div className="mb-3 mr-2">
-              <label
-                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="merchLat"
-              >
-                Merchant Latitude:
-                <input
-                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="merchLat"
                   type="number"
-                  value={merchLat}
-                  onChange={(e) => setMerchLat(e.target.value)}
+                  id="age"
+                  value={cityPop}
+                  onChange={(e) => setAge(e.target.value)}
                 />
               </label>
             </div>
             <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="merchLong"
+                htmlFor="trans_month"
               >
-                Merchant Latitude:
+                Transaction Month:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                  id="merchLong"
                   type="number"
-                  value={merchLong}
-                  onChange={(e) => setMerchLong(e.target.value)}
+                  id="trans_month"
+                  value={transMonth}
+                  onChange={(e) => setTransMonth(e.target.value)}
                 />
               </label>
             </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="trans_year"
+              >
+                Transaction Year:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="trans_year"
+                  value={transYear}
+                  onChange={(e) => setTransYear(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="lat"
+              >
+                Latitudinal Distance:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="lat"
+                  value={lat}
+                  onChange={(e) => setLat(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="long"
+              >
+                Longitudinal Distance:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="long"
+                  value={long}
+                  onChange={(e) => setLong(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_food_dining"
+              >
+                 Category Food Dining:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_food_dining"
+                  value={category_food_dining}
+                  onChange={(e) => setCategory_food_dining(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_gas_transport"
+              >
+                 Category Gas Transport:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_gas_transport"
+                  value={category_gas_transport}
+                  onChange={(e) => setCategory_gas_transport(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_grocery_net"
+              >
+                 Category Grocery Net:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_grocery_net"
+                  value={category_grocery_net}
+                  onChange={(e) => setCategory_grocery_net(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_grocery_pos"
+              >
+                 Category Grocery Pos:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_grocery_pos"
+                  value={category_grocery_pos}
+                  onChange={(e) => SetCategory_grocery_pos(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_health_fitness"
+              >
+                 Category Health Fitness:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_health_fitness"
+                  value={category_health_fitness}
+                  onChange={(e) => SetCategory_health_fitness(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_home"
+              >
+                 Category Home:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_home"
+                  value={category_home}
+                  onChange={(e) => SetCategory_home(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_kids_pets"
+              >
+                 Category Kids Pets:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_kids_pets"
+                  value={category_kids_pets}
+                  onChange={(e) => SetCategory_kids_pets(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_misc_net"
+              >
+                 Category Miscellenous Net:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_misc_net"
+                  value={category_misc_net}
+                  onChange={(e) => SetCategory_misc_net(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_misc_pos"
+              >
+                 Category Miscellenous Pos:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_misc_pos"
+                  value={category_misc_pos}
+                  onChange={(e) => SetCategory_misc_pos(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_personal_care"
+              >
+                 Category Personal Care:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_personal_care"
+                  value={category_personal_care}
+                  onChange={(e) => SetCategory_personal_care(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_shopping_net"
+              >
+                 Category Shopping net:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_shopping_net"
+                  value={category_shopping_net}
+                  onChange={(e) => SetCategory_shopping_net(e.target.value)}
+                />
+              </label>
+            </div>
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_shopping_pos"
+              >
+                 Category Shopping Pos:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_shopping_pos"
+                  value={category_shopping_pos}
+                  onChange={(e) => SetCategory_shopping_pos(e.target.value)}
+                />
+              </label>
+            </div>
+
+            <div className="mb-3 mr-2">
+              <label
+                className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                htmlFor="category_travel"
+              >
+                 Category Travel:
+                <input
+                  className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                  type="number"
+                  id="category_travel"
+                  value={category_travel}
+                  onChange={(e) => SetCategory_shopping_travel(e.target.value)}
+                />
+              </label>
+            </div>
+            
+         
+
             {/* <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
