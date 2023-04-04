@@ -20,11 +20,12 @@ def SVM(to_predict_list):
 def riskAssesment():
     if request.method == "POST":
         ans = []
-        sc = StandardScaler()
+        # sc = StandardScaler()
         to_predict_list = request.json
         to_predict_list = list(to_predict_list.values())
         ans.append(to_predict_list)
-        result = SVM(sc.fit_transform(ans))
+
+        result = SVM((ans))
         print(result)
     return "hi"
 
@@ -38,10 +39,10 @@ def LogisticFraud(to_predict_list):
 def logfraud():
     if request.method == "POST":
         ans = []
-        sc = StandardScaler()
+        # sc = StandardScaler()
         # print(request.json)
         to_predict_list = request.json
-        # print(to_predict_list)
+        print(to_predict_list)
         to_predict_list = list(to_predict_list.values())
         # to_predict_list = list(map(float, to_predict_list))
         # print(len(to_predict_list))
@@ -51,7 +52,7 @@ def logfraud():
         # print(sc.fit_transform(ans))
         # ans.append)
         # print(ans)
-        result = LogisticFraud(sc.fit_transform(ans))
+        result = LogisticFraud((ans))
         print(result)
         # print(result)
     return "hi"
