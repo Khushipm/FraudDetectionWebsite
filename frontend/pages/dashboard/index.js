@@ -7,6 +7,7 @@ import CardLineChart from "../../components/Cards/CardLineChart.js";
 import CardBarChart from "../../components/Cards/CardBarChart.js";
 import CardPageVisits from "../../components/Cards/CardPageVisits.js";
 import CardSocialTraffic from "../../components/Cards/CardSocialTraffic.js";
+import CardPieChart from "../../components/Cards/CardPieChart.js";
 
 // layout for page
 
@@ -15,11 +16,15 @@ import Admin from "../../components/Layouts/Admin.js";
 export default function Dashboard({ barchart }) {
   return (
     <>
-      <Admin title="Latest Trends" headerText="Fraud Analysis" className=" bg-gray-300 ">
+      <Admin
+        title="Latest Trends"
+        headerText="Fraud Analysis"
+        className=" bg-gray-300 "
+      >
         <div className=" flex flex-wrap mt-4 justify-center">
           <div className="w-full mb-12 xl:mb-0 px-4">
             <div>
-            <div className="w-full  px-20 mr-auto ml-auto ">
+              <div className="w-full  px-20 mr-auto ml-auto ">
                 <div className="relative  flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
                   <img
                     alt="..."
@@ -42,7 +47,10 @@ export default function Dashboard({ barchart }) {
                       Top Notch Analysis Techniques
                     </h4>
                     <p className="text-lg font-light mt-2 text-black ">
-                    The goal of credit card fraud analysis is to identify and prevent unauthorized transactions, protect the financial interests of consumers and financial institutions, and maintain the integrity of the payment system.
+                      The goal of credit card fraud analysis is to identify and
+                      prevent unauthorized transactions, protect the financial
+                      interests of consumers and financial institutions, and
+                      maintain the integrity of the payment system.
                     </p>
                   </blockquote>
                 </div>
@@ -50,8 +58,10 @@ export default function Dashboard({ barchart }) {
             </div>
             <div className="flex flex-wrap">
               <div className="w-full xl:w-12/12 mt-20 mb-12 xl:mb-0 px-4">
-
                 <CardLineChart />
+              </div>
+              <div className="w-full xl:w-12/12 mt-20 mb-12 xl:mb-0 px-4">
+                <CardPieChart />
               </div>
               <div className="w-full xl:w-12/12 px-4">
                 <CardBarChart barchart={barchart} />
@@ -74,7 +84,7 @@ export default function Dashboard({ barchart }) {
 
 export const getServerSideProps = async () => {
   const res = await axios.get("http://127.0.0.1:5000/mostfraudcategory");
-  console.log(res);
+  // console.log(res);
   return {
     props: { barchart: res.data },
   };
