@@ -26,32 +26,29 @@ export default function TransportForm() {
   const [category_gas_transport, setCategory_gas_transport] = useState("");
   const [category_grocery_net, setCategory_grocery_net] = useState("");
   const [category_grocery_pos, setCategory_grocery_pos] = useState("");
-  const [ category_health_fitness, setCategory_health_fitness] = useState("");
-  const [ category_home, setCategory_home] = useState("");
-  const [ category_kids_pets, setCategory_kids_pets] = useState("");
+  const [category_health_fitness, setCategory_health_fitness] = useState("");
+  const [category_home, setCategory_home] = useState("");
+  const [category_kids_pets, setCategory_kids_pets] = useState("");
   const [category_misc_net, setCategory_misc_net] = useState("");
-  const [ category_misc_pos, setCategory_misc_pos] = useState("");
-  const [ category_personal_care, setCategory_personal_care] = useState("");
+  const [category_misc_pos, setCategory_misc_pos] = useState("");
+  const [category_personal_care, setCategory_personal_care] = useState("");
   const [category_shopping_net, setCategory_shopping_net] = useState("");
   const [category_shopping_pos, setCategory_shopping_pos] = useState("");
   const [category_travel, setCategory_travel] = useState("");
 
- 
   // const [transDateTransTime, setTransDateTransTime] = useState("");
   // const [ccNum, setCcNum] = useState("");
   // const [merchant, setMerchant] = useState("");
   // const [category, setCategory] = useState("");
-  
+
   // const [first, setFirst] = useState("");
   // const [last, setLast] = useState("");
- 
+
   // const [street, setStreet] = useState("");
   // const [city, setCity] = useState("");
   // const [state, setState] = useState("");
   // const [zip, setZip] = useState("");
 
-  
- 
   // const [job, setJob] = useState("");
   // const [dob, setDob] = useState("");
   // const [transNum, setTransNum] = useState("");
@@ -67,27 +64,27 @@ export default function TransportForm() {
       .post("http://127.0.0.1:5000/logfraud", {
         // location: formData.Location,
         // Moist: Number(formData.Moist),
-        amt: 327.36,
-        gender: 0,
-        city_pop: 3876,
-        age: 59,
-        trans_month: 12,
-        trans_year: 2019,
-        latitudinal_distance: 0.349,
-        longitudinal_distance: 0.183,
-        category_food_dining: 0,
-        category_gas_transport: 0,
-        category_grocery_net: 0,
-        category_grocery_pos: 1,
-        category_health_fitness: 0,
-        category_home: 0,
-        category_kids_pets: 0,
-        category_misc_net: 0,
-        category_misc_pos: 0,
-        category_personal_care: 0,
-        category_shopping_net: 0,
-        category_shopping_pos: 0,
-        category_travel: 0,
+        amt: amt,
+        gender: gender,
+        city_pop: cityPop,
+        age: age,
+        trans_month: transMonth,
+        trans_year: transYear,
+        latitudinal_distance: lat,
+        longitudinal_distance: long,
+        category_food_dining: category_food_dining,
+        category_gas_transport: category_gas_transport,
+        category_grocery_net: category_grocery_net,
+        category_grocery_pos: category_grocery_pos,
+        category_health_fitness: category_health_fitness,
+        category_home: category_home,
+        category_kids_pets: category_kids_pets,
+        category_misc_net: category_misc_net,
+        category_misc_pos: category_misc_pos,
+        category_personal_care: category_personal_care,
+        category_shopping_net: category_shopping_net,
+        category_shopping_pos: category_shopping_pos,
+        category_travel: category_travel,
       })
       .then(function (response) {
         data = response.data;
@@ -309,7 +306,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_food_dining"
               >
-                 Category Food Dining:
+                Category Food Dining:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -324,7 +321,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_gas_transport"
               >
-                 Category Gas Transport:
+                Category Gas Transport:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -339,7 +336,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_grocery_net"
               >
-                 Category Grocery Net:
+                Category Grocery Net:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -354,7 +351,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_grocery_pos"
               >
-                 Category Grocery Pos:
+                Category Grocery Pos:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -369,7 +366,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_health_fitness"
               >
-                 Category Health Fitness:
+                Category Health Fitness:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -384,7 +381,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_home"
               >
-                 Category Home:
+                Category Home:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -399,7 +396,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_kids_pets"
               >
-                 Category Kids Pets:
+                Category Kids Pets:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -414,7 +411,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_misc_net"
               >
-                 Category Miscellenous Net:
+                Category Miscellenous Net:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -429,7 +426,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_misc_pos"
               >
-                 Category Miscellenous Pos:
+                Category Miscellenous Pos:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -444,7 +441,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_personal_care"
               >
-                 Category Personal Care:
+                Category Personal Care:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -459,7 +456,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_shopping_net"
               >
-                 Category Shopping net:
+                Category Shopping net:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -474,7 +471,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_shopping_pos"
               >
-                 Category Shopping Pos:
+                Category Shopping Pos:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -490,7 +487,7 @@ export default function TransportForm() {
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="category_travel"
               >
-                 Category Travel:
+                Category Travel:
                 <input
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
@@ -500,8 +497,6 @@ export default function TransportForm() {
                 />
               </label>
             </div>
-            
-         
 
             {/* <div className="mb-3 mr-2">
               <label
