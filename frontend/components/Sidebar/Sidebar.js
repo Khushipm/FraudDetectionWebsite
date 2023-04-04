@@ -42,7 +42,7 @@ export default function Sidebar() {
           {/* Brand */}
           <div className="flex flex-row justify-around ">
             <img
-              src="/img/log1.jpg"
+              src="/img/log1.png"
               alt="up"
               className="w-16 h-16 object-cover cursor-pointer mt-1"
             />
@@ -217,7 +217,7 @@ export default function Sidebar() {
 
             <ul className="md:flex-col md:min-w-full flex flex-col list-none">
               <li className="items-center">
-                <Link href="/transportation">
+                <Link href="/riskassesment">
                   <a
                     className={
                       "text-sm uppercase py-3 font-bold block " +
