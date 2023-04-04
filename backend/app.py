@@ -10,6 +10,24 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
+def SVM(to_predict_list):
+    loaded_model = pickle.load(open("models/riskassesment.pkl", "rb"))
+    result = loaded_model.predict(to_predict_list)
+    # print(result)
+    return result[0]
+
+@app.route("/riskAssesment", methods=["POST"])
+def riskAssesment():
+    if request.method == "POST":
+        ans = []
+        sc = StandardScaler()
+        to_predict_list = request.json
+        to_predict_list = list(to_predict_list.values())
+        ans.append(to_predict_list)
+        result = SVM(sc.fit_transform(ans))
+        print(result)
+    return "hi"
+
 def LogisticFraud(to_predict_list):
     # to_predict = np.array([to_predict_list])
     loaded_model = pickle.load(open("models/logmodel.pkl", "rb"))
@@ -29,14 +47,14 @@ def logfraud():
         # print(len(to_predict_list))
         # print(to_predict_list)
         ans.append(to_predict_list)
-        print(ans)
-        print(sc.fit_transform(ans))
+        # print(ans)
+        # print(sc.fit_transform(ans))
         # ans.append)
         # print(ans)
         result = LogisticFraud(sc.fit_transform(ans))
         print(result)
         # print(result)
-        return "hi"
+    return "hi"
 
 @app.route("/", methods=["GET"])
 def home():
