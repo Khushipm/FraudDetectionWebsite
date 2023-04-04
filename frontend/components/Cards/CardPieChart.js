@@ -1,21 +1,21 @@
 import React from "react";
 import Chart from "chart.js";
 
-export default function CardPieChart() {
-  //   const barKey = Object.keys(barchart);
-  //   const barVal = Object.values(barchart);
+export default function CardPieChart({ piechart }) {
+  const pieKey = Object.keys(piechart);
+  const pieVal = Object.values(piechart);
   //   console.log(barKey);
   //   console.log(barVal);
-  //   console.log(barchart);
+  console.log(piechart);
   React.useEffect(() => {
     let config = {
       type: "pie",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: pieKey,
         datasets: [
           {
             label: "# of Votes",
-            data: [12, 19, 3, 5, 2, 3],
+            data: pieVal,
             backgroundColor: [
               "rgba(255, 99, 132, 0.2)",
               "rgba(54, 162, 235, 0.2)",
@@ -58,7 +58,7 @@ export default function CardPieChart() {
             </div>
           </div>
         </div>
-        <div className="p-4 flex-auto flex items-center">
+        <div className="p-4 flex-auto">
           {/* Chart */}
           <div className="relative h-350-px">
             <canvas id="pie-chart"></canvas>

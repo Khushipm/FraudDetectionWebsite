@@ -2,31 +2,33 @@ import React from "react";
 import Chart from "chart.js";
 
 export default function CardBarChart({ barchart }) {
-  const barKey = Object.keys(barchart);
-  const barVal = Object.values(barchart);
-  console.log(barKey);
-  console.log(barVal);
-  console.log(barchart);
+  const barKey1 = Object.keys(barchart[0]);
+  const barVal1 = Object.values(barchart[0]);
+  const barKey2 = Object.keys(barchart[1]);
+  const barVal2 = Object.values(barchart[1]);
+  // console.log(barKey);
+  // console.log(barVal);
+  // console.log(barchart);
   React.useEffect(() => {
     let config = {
       type: "bar",
       data: {
-        labels: barKey,
+        labels: "Number of Transactions",
         datasets: [
           {
-            label: new Date().getFullYear(),
+            label: "Fradulent Transactions",
             backgroundColor: "#ed64a6",
             borderColor: "#ed64a6",
-            data: barVal,
+            data: barVal1,
             fill: false,
             barThickness: 8,
           },
           {
-            label: new Date().getFullYear() - 1,
+            label: "Non-Fradulent Transactions",
             fill: false,
             backgroundColor: "#4c51bf",
             borderColor: "#4c51bf",
-            data: [27, 68, 86, 74, 10, 4, 87],
+            data: barVal2,
             barThickness: 8,
           },
         ],
@@ -98,7 +100,7 @@ export default function CardBarChart({ barchart }) {
   return (
     <>
       <div className="flex items-stretch relative flex flex-col w-12/12 min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-        <div className="rounded-t px-6 mb-10 py-4 bg-transparent">
+        <div className="rounded-t px-6 mb-0 py-3 bg-transparent">
           <div className="flex flex-wrap items-center">
             <div className=" relative w-full max-w-full flex-grow flex-1">
               <h6 className="uppercase text-blueGray-400 mb-1 text-xs font-semibold">
@@ -110,7 +112,7 @@ export default function CardBarChart({ barchart }) {
             </div>
           </div>
         </div>
-        <div className="p-4 flex-auto flex items-center">
+        <div className="p-4 flex-auto">
           {/* Chart */}
           <div className="relative h-350-px">
             <canvas id="bar-chart"></canvas>

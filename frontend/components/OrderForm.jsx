@@ -2,8 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function TransportForm() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [isDisabled, setIsDisabled] = useState(false);
   const [output, setOutput] = useState(null);
   const handleChange = (event) => {
     setFormData((prevState) => {
@@ -75,15 +75,15 @@ export default function TransportForm() {
       .catch(function (error) {
         console.log(error);
       });
-    // setFormData({
-    //   Location: formData.Location,
-    //   Moist: 0,
-    //   Soil: 0,
-    //   Crop: 0,
-    //   N: 0,
-    //   K: 0,
-    //   P: 0,
-    // });
+    setFormData({
+      Location: formData.Location,
+      Moist: 0,
+      Soil: 0,
+      Crop: 0,
+      N: 0,
+      K: 0,
+      P: 0,
+    });
     // Do something with the form data here
   };
 

@@ -13,7 +13,7 @@ import CardPieChart from "../../components/Cards/CardPieChart.js";
 
 import Admin from "../../components/Layouts/Admin.js";
 
-export default function Dashboard({ barchart }) {
+export default function Dashboard({ barchart, piechart }) {
   return (
     <>
       <Admin
@@ -61,9 +61,9 @@ export default function Dashboard({ barchart }) {
                 <CardLineChart />
               </div>
               <div className="w-full xl:w-12/12 mt-20 mb-12 xl:mb-0 px-4">
-                <CardPieChart />
+                <CardPieChart piechart={piechart} />
               </div>
-              <div className="w-full xl:w-12/12 px-4">
+              <div className="w-full xl:w-12/12 mt-20 mb-12 xl:mb-0 px-4">
                 <CardBarChart barchart={barchart} />
               </div>
             </div>
@@ -82,11 +82,16 @@ export default function Dashboard({ barchart }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const res = await axios.get("http://127.0.0.1:5000/mostfraudcategory");
+export const getStaticProps = async () => {
+  const barchart = await axios.get("http://127.0.0.1:5000/barchart");
+
+  const piechart = await axios.get("http://127.0.0.1:5000/piechart");
   // console.log(res);
   return {
-    props: { barchart: res.data },
+    props: {
+      barchart: barchart.data,
+      piechart: piechart.data,
+    },
   };
 };
 

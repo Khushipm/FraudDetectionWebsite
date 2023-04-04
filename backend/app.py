@@ -5,6 +5,7 @@ import csv
 import pickle
 import numpy as np
 from sklearn.preprocessing import StandardScaler
+import pandas as pd
 
 app = Flask(__name__)
 CORS(app)
@@ -41,24 +42,51 @@ def logfraud():
 def home():
     return "server started..."
 
-@app.route("/mostfraudcategory", methods=["GET"])
-def mostfraudcategory():
-    fraud, notfraud = {}, {}
-    with open('data/fraudTrain.csv','r') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            # print(row)
-            if row["is_fraud"] == '1':
-                if fraud.get(row["category"]):
-                    fraud[row["category"]] += 1
-                else:
-                    fraud[row["category"]] = 1
-            else:
-                if notfraud.get(row["category"]):
-                    notfraud[row["category"]] += 1
-                else:
-                    notfraud[row["category"]] = 1
-        return jsonify(fraud,notfraud)
+
+
+
+
+@app.route("/piechart", methods=["GET"])
+def piechart():
+    df = pd.read_csv("data/fraudTrain.csv")
+    ans = df[df['is_fraud']==1]["job"].value_counts(sort=True,ascending=False).head(10)
+    # print(ans)
+
+    # job_fraud = {}
+    # with open('data/fraudTrain.csv','r') as file:
+    #     reader = csv.DictReader(file)
+    #     for row in reader:
+    #         if row["is_fraud"] == '1':
+    #             if job_fraud.get(row["job"]):
+    #                 job_fraud[row["job"]] += 1
+    #             else:
+    #                 job_fraud[row["job"]] = 1
+    #     # print(job_fraud)
+    # print(ans.to_dict())
+    return ans.to_dict()
+
+
+@app.route("/barchart", methods=["GET"])
+def barchart():
+    df = pd.read_csv("data/fraudTrain.csv")
+    fraud = df[df['is_fraud']==1]["category"].value_counts()
+    notfraud = df[df['is_fraud']==0]["category"].value_counts()
+    # fraud, notfraud = {}, {}
+    # with open('data/fraudTrain.csv','r') as file:
+    #     reader = csv.DictReader(file)
+    #     for row in reader:
+    #         # print(row)
+    #         if row["is_fraud"] == '1':
+    #             if fraud.get(row["category"]):
+    #                 fraud[row["category"]] += 1
+    #             else:
+    #                 fraud[row["category"]] = 1
+    #         else:
+    #             if notfraud.get(row["category"]):
+    #                 notfraud[row["category"]] += 1
+    #             else:
+    #                 notfraud[row["category"]] = 1
+    return jsonify(fraud.to_dict(),notfraud.to_dict())
 
 
 
