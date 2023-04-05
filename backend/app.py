@@ -68,12 +68,12 @@ def transdata():
     with open('data/fraudTrain.csv','r') as file:
         reader = csv.DictReader(file)
         for row in reader:
-            current = []
-            current.append(count)
-            current.append(row["cc_num"])
-            current.append(row["merchant"])
-            current.append(row["amt"])
-            current.append(row["is_fraud"])
+            current = {}
+            current["count"] = [count]
+            current["cc_num"]=row["cc_num"]
+            current["merchant"]=row["merchant"]
+            current["amt"] = row["amt"]
+            current["is_fraud"] = row["is_fraud"]
             ans.append(current)
             print(current)
             count += 1

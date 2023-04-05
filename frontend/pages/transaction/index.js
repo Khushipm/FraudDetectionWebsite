@@ -46,14 +46,8 @@ const index = ({ transdata }) => {
               </tr>
             </thead>
             <tbody>
-              {transdata.map((innerArray, index) => (
-                <ul key={index}>
-                  {innerArray.map((item, itemIndex) => (
-                    <li key={itemIndex}>
-                      <CardPageVisits transdata={item} />
-                    </li>
-                  ))}
-                </ul>
+              {transdata.map((item) => (
+                <CardPageVisits tran={item} />
               ))}
             </tbody>
             {/* <tbody>
