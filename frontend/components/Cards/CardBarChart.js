@@ -107,14 +107,14 @@ export default function CardBarChart({ barchart }) {
                 Performance
               </h6>
               <h2 className="text-blueGray-600 text-xl font-semibold">
-                Total orders
+               Fradulent v/s Non-Fraudelent Transactions
               </h2>
             </div>
           </div>
         </div>
         <div className="p-4 flex-auto">
           {/* Chart */}
-          <div className="relative h-350-px">
+          <div className="relative h-350-px w-20-px">
             <canvas id="bar-chart"></canvas>
           </div>
         </div>

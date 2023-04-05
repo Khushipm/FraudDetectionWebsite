@@ -29,7 +29,7 @@ export default function Navbar(props) {
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <div className="flex flex-row justify-around space-x-1">
               <img
-                src="/img/log1.jpg"
+                src="/img/log1.png"
                 alt="up"
                 className="w-18 h-16 object-cover cursor-pointer mt-1"
               />
@@ -73,7 +73,7 @@ export default function Navbar(props) {
                 <IndexDropdown />
               </li> */}
               <li className="flex items-center">
-                <Link href="/">
+                <Link href="/dashboard">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-10 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     DashBoard
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}

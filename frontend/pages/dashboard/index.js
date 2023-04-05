@@ -17,7 +17,7 @@ export default function Dashboard({ barchart, piechart }) {
   return (
     <>
       <Admin
-        title="Latest Trends"
+        title=""
         headerText="Fraud Analysis"
         className=" bg-gray-300 "
       >
