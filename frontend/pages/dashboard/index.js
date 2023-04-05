@@ -16,11 +16,7 @@ import Admin from "../../components/Layouts/Admin.js";
 export default function Dashboard({ barchart, piechart }) {
   return (
     <>
-      <Admin
-        title=""
-        headerText="Fraud Analysis"
-        className=" bg-gray-300 "
-      >
+      <Admin title="" headerText="Fraud Analysis" className=" bg-gray-300 ">
         <div className=" flex flex-wrap mt-4 justify-center">
           <div className="w-full mb-12 xl:mb-0 px-4">
             <div>
@@ -67,14 +63,14 @@ export default function Dashboard({ barchart, piechart }) {
                 <CardBarChart barchart={barchart} />
               </div>
             </div>
-            <div className="flex flex-wrap mt-4">
+            {/* <div className="flex flex-wrap mt-4">
               <div className="w-full xl:w-12/12 mb-12 xl:mb-0 px-4">
                 <CardPageVisits />
               </div>
               <div className="w-full xl:w-4/12 px-4">
                 <CardSocialTraffic />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </Admin>
