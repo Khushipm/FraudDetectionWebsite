@@ -91,10 +91,11 @@ export default function TransportForm() {
         category_travel: Number(category_travel),
       })
       .then(function (response) {
-        data = response.data;
-        console.log(data);
-        setOutput(data);
-        console.log(output);
+        console.log(response)
+        setOutput(response.data.result);
+        console.log(response.data.result);
+        console.log(response.data.result.result);
+
       })
       .catch(function (error) {
         console.log(error);
@@ -620,6 +621,7 @@ export default function TransportForm() {
                 Submit
               </button>
             </div>
+            <div className="alert">{output}</div>
           </form>
           {output == 0 && <div className="alert">The prediction is 0.</div>}
           {output == 1 && <div className="alert">The prediction is 1.</div>}
