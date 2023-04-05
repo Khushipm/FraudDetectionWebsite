@@ -11,9 +11,9 @@ app = Flask(__name__)
 CORS(app)
 
 def SVM(to_predict_list):
+    print(to_predict_list)
     loaded_model = pickle.load(open("models/riskassesment.pkl", "rb"))
     result = loaded_model.predict(to_predict_list)
-    # print(result)
     return result[0]
 
 @app.route("/riskAssesment", methods=["POST"])
@@ -60,6 +60,26 @@ def logfraud():
 @app.route("/", methods=["GET"])
 def home():
     return "server started..."
+
+@app.route("/transactiondata", methods=["GET"])
+def transdata():
+    ans = []
+    count = 0
+    with open('data/fraudTrain.csv','r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            current = []
+            current.append(count)
+            current.append(row["cc_num"])
+            current.append(row["merchant"])
+            current.append(row["amt"])
+            current.append(row["is_fraud"])
+            ans.append(current)
+            print(current)
+            count += 1
+            if count == 24:
+                return jsonify(ans)
+
 
 
 
