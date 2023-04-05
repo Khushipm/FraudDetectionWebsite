@@ -55,7 +55,10 @@ def logfraud():
         result = LogisticFraud((ans))
         print(result)
         # print(result)
-    return "hi"
+        if(result==1):
+         return {"result":"It is a Fraudelent Transaction"}
+        
+        return {"result":"It is Not a Fraudelent Transaction"}
 
 @app.route("/", methods=["GET"])
 def home():
