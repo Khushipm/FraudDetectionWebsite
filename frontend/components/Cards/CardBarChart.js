@@ -107,7 +107,7 @@ export default function CardBarChart({ barchart }) {
                 Performance
               </h6>
               <h2 className="text-blueGray-600 text-xl font-semibold">
-               Fradulent v/s Non-Fraudelent Transactions
+                Fradulent v/s Non-Fraudelent Transactions
               </h2>
             </div>
           </div>

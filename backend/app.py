@@ -10,6 +10,22 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    ans = []
+    file = request.files['file']
+    reader = csv.reader(file.stream.read().decode('utf-8').splitlines())
+    for row in reader:
+        # Do something with the row data
+        print(row)
+    print("hi")
+    print(type(file))
+    return {"status": "ok"}
+
+
+
+
+
 def SVM(to_predict_list):
     print(to_predict_list)
     loaded_model = pickle.load(open("models/riskassesment.pkl", "rb"))

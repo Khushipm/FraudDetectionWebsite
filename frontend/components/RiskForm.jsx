@@ -39,7 +39,7 @@ export default function RiskForm() {
   const [PAY_AMT4, setPAY_AMT4] = useState("");
   const [PAY_AMT5, setPAY_AMT5] = useState("");
   const [PAY_AMT6, setPAY_AMT6] = useState("");
-  // const [AVG_BILL_AMT, setAVG_BILL_AMT] = useState("");
+  const [AVG_BILL_AMT, setAVG_BILL_AMT] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,7 +70,7 @@ export default function RiskForm() {
         PAY_AMT4: Number(PAY_AMT4),
         PAY_AMT5: Number(PAY_AMT5),
         PAY_AMT6: Number(PAY_AMT6),
-        // AVG_BILL_AMT: Number(AVG_BILL_AMT),
+        AVG_BILL_AMT: Number(AVG_BILL_AMT),
       })
       .then(function (response) {
         data = response.data;
@@ -552,7 +552,7 @@ export default function RiskForm() {
               </label>
             </div>
 
-            {/* <div className="mb-3 mr-2">
+            <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="AVG_BILL_AMT"
@@ -567,7 +567,7 @@ export default function RiskForm() {
                   onChange={(e) => setAVG_BILL_AMT(e.target.value)}
                 />
               </label>
-            </div> */}
+            </div>
             {/* <div className="mb-3 mr-2">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
