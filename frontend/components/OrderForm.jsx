@@ -58,12 +58,26 @@ export default function TransportForm() {
   // const [transNum, setTransNum] = useState("");
   // const [unixTime, setUnixTime] = useState("");
   // const [merchLat, setMerchLat] = useState("");
-  // const [merchLong, setMerchLong] = useState("");
+  // const [merchLong, setMerchLong] = useState("");s
   // const [isFraud, setIsFraud] = useState("");
   // const [transDate, setTransDate] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const gender = gender === "Male" ? 1 : 0;
+    const category_food_dining = category_food_dining === "NO" ? 0 : 1;
+    const category_gas_transport = category_gas_transport === "NO" ? 0 : 1;
+    const category_grocery_net = category_grocery_net === "NO" ? 0 : 1;
+    const category_grocery_pos = category_grocery_pos === "NO" ? 0 : 1;
+    const category_health_fitness = category_health_fitness === "NO" ? 0 : 1;
+    const category_home = category_home === "NO" ? 0 : 1;
+    const category_kids_pets = category_kids_pets === "NO" ? 0 : 1;
+    const category_misc_net = category_misc_net === "NO" ? 0 : 1;
+    const category_misc_pos = category_misc_pos === "NO" ? 0 : 1;
+    const category_personal_care = category_personal_care === "NO" ? 0 : 1;
+    const category_shopping_net = category_shopping_net === "NO" ? 0 : 1;
+    const category_shopping_pos = category_shopping_pos === "NO" ? 0 : 1;
+    const category_travel = category_travel === "NO" ? 0 : 1;
     await axios
       .post("http://127.0.0.1:5000/logfraud", {
         // location: formData.Location,
@@ -91,11 +105,10 @@ export default function TransportForm() {
         category_travel: Number(category_travel),
       })
       .then(function (response) {
-        console.log(response)
+        console.log(response);
         setOutput(response.data.result);
         console.log(response.data.result);
         console.log(response.data.result.result);
-
       })
       .catch(function (error) {
         console.log(error);
@@ -207,13 +220,16 @@ export default function TransportForm() {
                 htmlFor="gender"
               >
                 Gender:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="gender"
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
-                />
+                >
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -312,13 +328,16 @@ export default function TransportForm() {
                 htmlFor="category_food_dining"
               >
                 Category Food Dining:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_food_dining"
                   value={category_food_dining}
                   onChange={(e) => setCategory_food_dining(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -327,13 +346,16 @@ export default function TransportForm() {
                 htmlFor="category_gas_transport"
               >
                 Category Gas Transport:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_gas_transport"
                   value={category_gas_transport}
                   onChange={(e) => setCategory_gas_transport(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -342,13 +364,16 @@ export default function TransportForm() {
                 htmlFor="category_grocery_net"
               >
                 Category Grocery Net:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_grocery_net"
                   value={category_grocery_net}
                   onChange={(e) => setCategory_grocery_net(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -357,13 +382,16 @@ export default function TransportForm() {
                 htmlFor="category_grocery_pos"
               >
                 Category Grocery Pos:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_grocery_pos"
                   value={category_grocery_pos}
                   onChange={(e) => setCategory_grocery_pos(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -372,13 +400,16 @@ export default function TransportForm() {
                 htmlFor="category_health_fitness"
               >
                 Category Health Fitness:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_health_fitness"
                   value={category_health_fitness}
                   onChange={(e) => setCategory_health_fitness(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -387,13 +418,16 @@ export default function TransportForm() {
                 htmlFor="category_home"
               >
                 Category Home:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_home"
                   value={category_home}
                   onChange={(e) => setCategory_home(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -402,13 +436,16 @@ export default function TransportForm() {
                 htmlFor="category_kids_pets"
               >
                 Category Kids Pets:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_kids_pets"
                   value={category_kids_pets}
                   onChange={(e) => setCategory_kids_pets(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -417,13 +454,16 @@ export default function TransportForm() {
                 htmlFor="category_misc_net"
               >
                 Category Miscellenous Net:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_misc_net"
                   value={category_misc_net}
                   onChange={(e) => setCategory_misc_net(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -432,13 +472,16 @@ export default function TransportForm() {
                 htmlFor="category_misc_pos"
               >
                 Category Miscellenous Pos:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_misc_pos"
                   value={category_misc_pos}
                   onChange={(e) => setCategory_misc_pos(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -447,13 +490,16 @@ export default function TransportForm() {
                 htmlFor="category_personal_care"
               >
                 Category Personal Care:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_personal_care"
                   value={category_personal_care}
                   onChange={(e) => setCategory_personal_care(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -462,13 +508,16 @@ export default function TransportForm() {
                 htmlFor="category_shopping_net"
               >
                 Category Shopping net:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_shopping_net"
                   value={category_shopping_net}
                   onChange={(e) => setCategory_shopping_net(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
             <div className="mb-3 mr-2">
@@ -477,13 +526,16 @@ export default function TransportForm() {
                 htmlFor="category_shopping_pos"
               >
                 Category Shopping Pos:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_shopping_pos"
                   value={category_shopping_pos}
                   onChange={(e) => setCategory_shopping_pos(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
 
@@ -493,13 +545,16 @@ export default function TransportForm() {
                 htmlFor="category_travel"
               >
                 Category Travel:
-                <input
+                <select
                   className="border-0 px-3 mt-3 mb-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                   type="number"
                   id="category_travel"
                   value={category_travel}
                   onChange={(e) => setCategory_travel(e.target.value)}
-                />
+                >
+                  <option value="NO">NO</option>
+                  <option value="YES">YES</option>
+                </select>
               </label>
             </div>
 

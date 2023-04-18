@@ -18,8 +18,8 @@ def upload_file():
     for row in reader:
         # Do something with the row data
         print(row)
-    print("hi")
-    print(type(file))
+    # print("hi")
+    # print(type(file))
     return {"status": "ok"}
 
 
